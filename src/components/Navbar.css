@@ -1,0 +1,76 @@
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 8px 8px;
+}
+
+.navbar-blur {
+  position: absolute;
+  inset: -20px 0 0 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(13, 6, 24, 0.85) 30%, rgba(13, 6, 24, 0.98) 100%);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  pointer-events: none;
+}
+
+.navbar-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 8px 4px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.nav-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 16px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.nav-tab:hover {
+  color: var(--text-secondary);
+}
+
+.nav-tab-active {
+  color: var(--accent-primary) !important;
+  background: rgba(224, 64, 251, 0.1);
+}
+
+.nav-tab-active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: var(--accent-primary);
+  border-radius: 0 0 4px 4px;
+}
+
+.nav-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.nav-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
